@@ -54,7 +54,7 @@ def test_shutdown(baseurl, get, post, get_no_header, generate_sha512):
                 response2 = requests.get(baseurl + '/hash/' + str(response.text))
 
                 if response2.status_code != requests.codes.ok:
-                    stack_error(status, b'GET id status text, Service Unavilable.')
+                    stack_error(status, b'GET id status text, Service Unavialable.')
                     if test_encoding(response2.text):
                         stack_error(status, b'GET id encoding error.')
 
@@ -75,7 +75,7 @@ def test_shutdown(baseurl, get, post, get_no_header, generate_sha512):
                 response2 = requests.get(baseurl + '/hash/' + str(response.text))
 
                 if response2.status_code != requests.codes.ok:
-                    stack_error(status, b'GET id status text, Service Unavilable.')
+                    stack_error(status, b'GET id status text, Service Unavailable.')
                     if test_encoding(response2.text):
                         stack_error(status, b'GET id encoding error.')
 

@@ -68,7 +68,7 @@ However, if the test fails, the test function reports all failures at the bottom
 ## About the tests
 
 ### Errors found during testing
-
+```
 These five errors are repeatable running the automated test suite.
 
         POST to /hash should accept a password
@@ -78,13 +78,29 @@ These five errors are repeatable running the automated test suite.
             Error: GET/stats should not accept data.
 
         GET to /hash should accept a job identifier
-            Error: GET id status text, Service Unavilable.
+            Error: GET id status text, Service Unavailable.
 
         GET to hash should return base64 encoded password hash for corresponding POST request
 	    Error: GET id encoding error.
 
         No additional password requests should be allowed when shutdown pending
 	    Error: No additional password requests when shutdown pending.
+
+NOTE:
+    After running the test suite a number of times I have noticed
+    an infrequent, intermittent issue with the test 'test_2_shutdown.py.'
+    - likely a timing issue in the test code.
+
+    This is probably a 'DQ' for this test.
+
+    However, the test does run correctly most of the time ('most of the time,' OUCH!).
+
+    If you see this output then run the test suite again.
+
+        test/tests/test_2_shutdown.py 
+        	Error: 
+        F
+```
  
 
 ### What was not tested 
@@ -118,6 +134,7 @@ Observations
 1. I did not convince myself I was simulating multiple simultaneous connections in the test automation.
    The concern is missing a failing requirement.
 2. The automated testing is a first-pass best effort.
+
 ```
 
 
