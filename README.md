@@ -186,3 +186,13 @@ Using a bash script containing the previously created bash scripts
 - Test scripts DO contain the shutdown call.
 1. Run various script configurations, observer the server, test output, and query the server.
 ```
+
+### What else I might test
+```
+1. Figure out the timing issue with test_2_shutdown.py'
+2. Test the GET stats Average Time.  
+   First attempt at testing would include a timer in the test script.
+3. Figure out the 'multiple simultaneous connections' test concerns.
+   I need to at least see different process IDs running in the automated tests. 
+   Part of the issue is the server running on 'localhost.'
+   While I am runing in a VM, there may be a solution in running the hash server in Docker.
