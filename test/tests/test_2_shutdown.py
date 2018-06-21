@@ -118,7 +118,7 @@ def test_shutdown(baseurl, get, post, get_no_header, generate_sha512):
         post2.start()
         if i == 1999:
             post2.join()
-        if i == 500:
+        if i == 1000:
             get = Process(target = test_shutdown, args=[array])
             get.start()
 
